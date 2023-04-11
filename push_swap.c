@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:31:37 by gsilva            #+#    #+#             */
-/*   Updated: 2023/03/28 13:20:40 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/04/11 15:15:22 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	main(int argc, char **argv)
 	int		i;
 
 	i = 0;
-	if (argc < 2 || !check_input())
-	{
-		write(1, "Invalid input", 13);
-		return ;
-	}
+	// if (argc < 2 || !check_input())
+	// {
+	// 	write(1, "Invalid input", 13);
+	// 	return ;
+	// }
 	while (argv[i])
 		i++;
 	stack()->stk_a = (int *)malloc((argc - 1) * sizeof(int));

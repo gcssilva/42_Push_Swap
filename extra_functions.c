@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:16:12 by gsilva            #+#    #+#             */
-/*   Updated: 2023/03/28 13:53:13 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/04/11 15:49:51 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,34 @@ int	ft_atoi(const char *str)
 		}
 	}
 	return (nbr * s);
+}
+
+void	down(int i)
+{
+	int	j;
+
+	j = i;
+	swap_a();
+	i--;
+	while (i-- > 0)
+	{
+		rotate_a();
+		swap_a();
+	}
+	while (--j > 0)
+		rrotate_a();
+}
+
+void	up(int i)
+{
+	int	j;
+
+	j = i;
+	while (i-- > 0)
+	{
+		rrotate_a();
+		swap_a();
+	}
+	while (--i > 0)
+		rotate_a();
 }

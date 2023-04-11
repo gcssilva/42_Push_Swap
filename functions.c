@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:15:06 by gsilva            #+#    #+#             */
-/*   Updated: 2023/03/28 14:41:51 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/04/11 15:49:10 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	base_sort(void)
 	int	*tmp;
 
 	tmp = stack()->stk_a;
-	if (tmp == 2)
+	if (stack()->size_a == 2)
 		if (tmp[0] > tmp[1])
 			swap_a();
 	else
@@ -55,26 +55,18 @@ void	ft_sort(void)
 	int	size;
 	int	*tmp;
 
-	i = 1;
-	size = stack()->size_a;
+	i = 0;
 	tmp = stack()->stk_a;
 	push_a();
 	if (tmp[0] < tmp[1])
 		return ;
-	while (i < size && tmp[0] > tmp[i])
+	while ((i + 1) < stack()->size_a && tmp[0] > tmp[i])
+	{
 		i++;
-	if (i < size / 2)
-	{
-		swap_a();
-		i--;
-		while (i-- < 0)
-		{
-			rotate_a();
-			swap_a();
-		}
+		printf("%d %d %d\n", i, tmp[0], tmp[i]);
 	}
+	if (i <= stack()->size_a / 2)
+		down(i);
 	else
-	{
-		while (size > i)
-	}
+		up(i);
 }

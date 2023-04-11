@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:10:21 by gsilva            #+#    #+#             */
-/*   Updated: 2023/03/27 16:13:11 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/04/11 15:16:57 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	push_a(void)
 	}
 	stack()->size_a += 1;
 	stack()->size_b -= 1;
-	write(1, "pa", 2);
+	write(1, "pa\n", 3);
 }
 
 void	push_b(void)
@@ -51,5 +51,5 @@ void	push_b(void)
 	}
 	stack()->size_b += 1;
 	stack()->size_a -= 1;
-	write(1, "pb", 2);
+	write(1, "pb\n", 3);
 }
