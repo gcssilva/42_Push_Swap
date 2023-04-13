@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:55:57 by gsilva            #+#    #+#             */
-/*   Updated: 2023/04/11 15:38:06 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/04/13 14:53:33 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	rrotate_a(void);
 void	rrotate_b(void);
 
 void	base_sort(void);
+
+void	print_stks(void);
 
 void	ft_sort(void);
 

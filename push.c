@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:10:21 by gsilva            #+#    #+#             */
-/*   Updated: 2023/04/11 15:16:57 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/04/13 14:57:43 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push_a(void)
 {
 	int	i;
 
-	i = stack()->size_a;
+	i = stack()->size_a - 1;
 	while (i > 0)
 	{
 		stack()->stk_a[i] = stack()->stk_a[i - 1];
@@ -37,7 +37,7 @@ void	push_b(void)
 {
 	int	i;
 
-	i = stack()->size_b;
+	i = stack()->size_b - 1;
 	while (i > 0)
 	{
 		stack()->stk_b[i] = stack()->stk_b[i - 1];
@@ -46,7 +46,7 @@ void	push_b(void)
 	stack()->stk_b[0] = stack()->stk_a[0];
 	while (i < stack()->size_a)
 	{
-		stack()->stk_a[i] = stack()->stk_b[i + 1];
+		stack()->stk_a[i] = stack()->stk_a[i + 1];
 		i++;
 	}
 	stack()->size_b += 1;

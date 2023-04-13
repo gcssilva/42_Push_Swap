@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:16:12 by gsilva            #+#    #+#             */
-/*   Updated: 2023/04/11 15:49:51 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/04/13 14:56:44 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,17 @@ void	up(int i)
 	}
 	while (--i > 0)
 		rotate_a();
+}
+
+void	print_stks(void)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack()->size_a || i < stack()->size_b)
+	{
+		printf("%d\t%d\n", stack()->stk_a[i], stack()->stk_b[i]);
+		i++;
+	}
+	printf("\n\n");
 }

@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:15:06 by gsilva            #+#    #+#             */
-/*   Updated: 2023/04/11 15:49:10 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/04/13 14:54:54 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,19 @@ t_stack	*stack(void)
 
 void	push_swap(void)
 {
+	print_stks();
 	while (stack()->size_a > 3)
 	{
 		push_b();
+		print_stks();
 	}
 	base_sort();
+	print_stks();
 	while (stack()->size_b > 0)
+	{
 		ft_sort();
+		print_stks();
+	}
 }
 
 void	base_sort(void)
@@ -36,8 +42,10 @@ void	base_sort(void)
 
 	tmp = stack()->stk_a;
 	if (stack()->size_a == 2)
+	{
 		if (tmp[0] > tmp[1])
 			swap_a();
+	}
 	else
 	{
 		if (tmp[0] > tmp[1] && tmp[0] > tmp[2])
@@ -53,18 +61,13 @@ void	ft_sort(void)
 {
 	int	i;
 	int	size;
-	int	*tmp;
 
 	i = 0;
-	tmp = stack()->stk_a;
 	push_a();
-	if (tmp[0] < tmp[1])
+	if (stack()->stk_a[0] < stack()->stk_a[1])
 		return ;
-	while ((i + 1) < stack()->size_a && tmp[0] > tmp[i])
-	{
+	while (stack()->stk_a[0] > stack()->stk_a[i + 1] && (i + 1) < stack()->size_a)
 		i++;
-		printf("%d %d %d\n", i, tmp[0], tmp[i]);
-	}
 	if (i <= stack()->size_a / 2)
 		down(i);
 	else
