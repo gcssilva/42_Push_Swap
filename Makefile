@@ -17,4 +17,4 @@ clean:
 			rm $(NAME)
 
 re:			clean
-			all
+			$(NAME)

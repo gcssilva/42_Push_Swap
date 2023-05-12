@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:55:57 by gsilva            #+#    #+#             */
-/*   Updated: 2023/04/13 14:53:33 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/05/12 14:20:55 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,7 @@ void	up(int i);
 void	push_swap(void);
 
 int		ft_atoi(const char *str);
+
+int		is_sorted(void);
 
 #endif

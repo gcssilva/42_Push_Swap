@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:16:12 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/04 14:48:34 by codespace        ###   ########.fr       */
+/*   Updated: 2023/05/12 14:20:39 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,28 +43,31 @@ int	ft_atoi(const char *str)
 void	down(int i)
 {
 	int	j;
-
+	
 	j = i;
 	swap_a();
-	i--;
-	while (i-- > 0)
+	while (i-- > 1)
 	{
 		rotate_a();
 		swap_a();
 	}
-	while (--j > 0)
+	while (j-- > 1)
 		rrotate_a();
 }
 
 void	up(int i)
 {
-	while (i-- > 0)
+	int	j;
+
+	j = i;
+	while (i-- > 1)
 	{
 		rrotate_a();
 		swap_a();
 	}
-	while (--i > 0)
+	while (j-- > 0)
 		rotate_a();
+	
 }
 
 void	print_stks(void)
@@ -78,4 +81,18 @@ void	print_stks(void)
 		i++;
 	}
 	printf("\n\n");
+}
+
+int	is_sorted(void)
+{
+	int	i;
+
+	i = 1;
+	while (i < stack()->size_a)
+	{
+		if (stack()->stk_a[i - 1] > stack()->stk_a[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

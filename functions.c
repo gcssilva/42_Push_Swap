@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:15:06 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/04 14:47:50 by codespace        ###   ########.fr       */
+/*   Updated: 2023/05/12 14:38:14 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	push_swap(void)
 	print_stks();
 	while (stack()->size_a > 3)
 	{
+		if (is_sorted())
+			break ;
 		push_b();
 		print_stks();
 	}
@@ -70,5 +72,5 @@ void	ft_sort(void)
 	if (i <= stack()->size_a / 2)
 		down(i);
 	else
-		up(i);
+		up(stack()->size_a - i);
 }

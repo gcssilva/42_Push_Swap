@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:31:37 by gsilva            #+#    #+#             */
-/*   Updated: 2023/04/13 14:52:47 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/05/12 14:55:43 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int	main(int argc, char **argv)
 	while (argv[++i])
 		stack()->stk_a[i - 1] = ft_atoi(argv[i]);
 	stack()->size_a = argc - 1;
-	stack()->size_b = argc - 4;
+	stack()->size_b = 0;
 	push_swap();
 }

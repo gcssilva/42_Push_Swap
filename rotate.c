@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:16:55 by gsilva            #+#    #+#             */
-/*   Updated: 2023/04/11 15:17:44 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/05/12 14:53:15 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ void	rotate_a(void)
 
 	tmp = stack()->stk_a[0];
 	i = 0;
-	while (++i < stack()->size_a - 1)
-		stack()->stk_a[i - 1] = stack()->stk_a[i];
+	while (i < stack()->size_a)
+	{
+		stack()->stk_a[i] = stack()->stk_a[i + 1];
+		i++;
+	}
 	stack()->stk_a[stack()->size_a - 1] = tmp;
 	write(1, "ra\n", 3);
 }
@@ -32,7 +35,7 @@ void	rotate_b(void)
 
 	tmp = stack()->stk_b[0];
 	i = 0;
-	while (++i < stack()->size_b - 1)
+	while (++i < stack()->size_b)
 		stack()->stk_b[i - 1] = stack()->stk_b[i];
 	stack()->stk_b[stack()->size_b - 1] = tmp;
 	write(1, "rb\n", 3);
