@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:31:37 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/12 14:55:43 by codespace        ###   ########.fr       */
+/*   Updated: 2023/05/23 13:52:43 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,9 @@ int	main(int argc, char **argv)
 	// 	write(1, "Invalid input!", 14);
 	// 	return ;
 	// }
-	while (argv[i])
-		i++;
-	stack()->stk_a = (int *)malloc((argc - 1) * sizeof(int));
-	stack()->stk_b = (int *)malloc((argc - 4) * sizeof(int));
-	i = 0;
 	while (argv[++i])
-		stack()->stk_a[i - 1] = ft_atoi(argv[i]);
-	stack()->size_a = argc - 1;
-	stack()->size_b = 0;
-	push_swap();
+		add_back(new_node(ft_atoi(argv[i])));
+	stack()->a_size = i - 1;
+	stack()->b_size = 0;
+	return (0);
 }

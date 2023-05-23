@@ -6,11 +6,35 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:16:12 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/12 14:20:39 by codespace        ###   ########.fr       */
+/*   Updated: 2023/05/23 12:59:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stk_node	*new_node(int content)
+{
+	t_stk_node	*new_node;
+
+	new_node = (t_stk_node *)malloc(sizeof(t_stk_node));
+	if (!new_node)
+		return (NULL);
+	new_node->nbr = content;
+	new_node->next = NULL;
+	return (new_node);
+}
+
+void	add_back(t_stk_node *new)
+{
+	if (!stack()->stk_a)
+	{
+		stack()->stk_a = new;
+		stack()->last_a = new;
+		return ;
+	}
+	stack()->last_a->next = new;
+	stack()->last_a = new;
+}
 
 int	ft_atoi(const char *str)
 {
@@ -38,61 +62,4 @@ int	ft_atoi(const char *str)
 		}
 	}
 	return (nbr * s);
-}
-
-void	down(int i)
-{
-	int	j;
-	
-	j = i;
-	swap_a();
-	while (i-- > 1)
-	{
-		rotate_a();
-		swap_a();
-	}
-	while (j-- > 1)
-		rrotate_a();
-}
-
-void	up(int i)
-{
-	int	j;
-
-	j = i;
-	while (i-- > 1)
-	{
-		rrotate_a();
-		swap_a();
-	}
-	while (j-- > 0)
-		rotate_a();
-	
-}
-
-void	print_stks(void)
-{
-	int	i;
-
-	i = 0;
-	while (i < stack()->size_a || i < stack()->size_b)
-	{
-		printf("%d\t%d\n", stack()->stk_a[i], stack()->stk_b[i]);
-		i++;
-	}
-	printf("\n\n");
-}
-
-int	is_sorted(void)
-{
-	int	i;
-
-	i = 1;
-	while (i < stack()->size_a)
-	{
-		if (stack()->stk_a[i - 1] > stack()->stk_a[i])
-			return (0);
-		i++;
-	}
-	return (1);
 }
