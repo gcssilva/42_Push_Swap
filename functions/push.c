@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:10:21 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/25 13:32:20 by codespace        ###   ########.fr       */
+/*   Updated: 2023/05/31 16:58:02 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	push_a(void)
 {
@@ -28,7 +28,7 @@ void	push_a(void)
 void	push_b(void)
 {
 	t_node	*tmp;
-	
+
 	tmp = stack()->stk_a;
 	stack()->stk_a = stack()->stk_a->next;
 	tmp->next = stack()->stk_b;

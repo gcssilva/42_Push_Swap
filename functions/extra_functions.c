@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   extra_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:16:12 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/24 15:26:11 by codespace        ###   ########.fr       */
+/*   Updated: 2023/05/31 16:58:11 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_atoi(const char *str)
 {
@@ -63,7 +63,6 @@ void	print_stks(void)
 		}
 		else
 			printf("n\n");
-		
 	}
 }
 

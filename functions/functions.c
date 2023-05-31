@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:15:06 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/25 14:27:31 by codespace        ###   ########.fr       */
+/*   Updated: 2023/05/31 17:01:25 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_stack	*stack(void)
 {
-	static t_stack _stk;
-	
-	return(&_stk);
+	static t_stack	_stk;
+
+	return (&_stk);
 }
 
 t_node	*new_node(int content)
@@ -63,24 +63,3 @@ void	add_back(t_node *new)
 // 		write(1, "pb\n", 3);
 // 	}
 // }
-
-void	ft_ss(void)
-{
-	swap(stack()->stk_a, 0);
-	swap(stack()->stk_b, stack()->last_b);
-	write(1, "ss\n", 3);
-}
-
-void	ft_rr(void)
-{
-	rotate(stack()->stk_a, stack()->last_a);
-	rotate(stack()->stk_b, stack()->last_b);
-	write(1, "rr\n", 3);
-}
-
-void	ft_rrr(void)
-{
-	rrotate(stack()->stk_a, stack()->last_a);
-	rrotate(stack()->stk_b, stack()->last_b);
-	write(1, "rrr\n", 4);
-}
