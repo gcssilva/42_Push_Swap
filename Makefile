@@ -16,5 +16,9 @@ $(NAME):
 clean:
 			rm $(NAME)
 
-re:			clean
-			$(NAME)
+fclean:		clean
+
+re:			fclean
+			make
+
+.PHONY:		all clean re
