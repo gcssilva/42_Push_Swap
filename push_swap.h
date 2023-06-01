@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:55:57 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/31 17:28:11 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/06/01 18:07:52 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ typedef struct s_stack
 
 void		swap_a(void);
 void		swap_b(void);
+void		ss(void);
 void		rotate_a(void);
 void		rotate_b(void);
+void		rr(void);
 void		rrotate_a(void);
 void		rrotate_b(void);
+void		rrr(void);
 void		add_back(t_node *new);
 void		push_a(void);
 void		push_b(void);
@@ -51,6 +54,9 @@ int			ft_isdigit(int c);
 t_stack		*stack(void);
 t_node		*new_node(int content);
 
+void	push_swap(void);
+void	base_sort(void);
+void	reduce_a(void);
 void		print_stks(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:57:22 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/31 17:31:27 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/06/01 18:08:17 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	rrotate_b(void)
 	write(1, "rrb\n", 4);
 }
 
-void	ft_rrr(void)
+void	rrr(void)
 {
 	rrotate(stack()->stk_a, stack()->last_a, 'a');
 	rrotate(stack()->stk_b, stack()->last_b, 'b');

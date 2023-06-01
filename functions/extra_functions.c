@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:16:12 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/31 16:58:11 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/06/01 16:27:15 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ int	ft_atoi(const char *str)
 	while (*str >= 48 && *str <= 57)
 	{
 		nbr = nbr * 10 + (*str++ - 48);
-		if (nbr > 2147483648)
-		{
+		if (nbr > 2147483648 || (nbr == 2147483648 && s == 1))
 			nbr_overflow();
-			return (0);
-		}
 	}
 	return (nbr * s);
 }

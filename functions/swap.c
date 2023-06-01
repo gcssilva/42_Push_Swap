@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:13:39 by gsilva            #+#    #+#             */
-/*   Updated: 2023/05/31 17:16:45 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/06/01 18:07:42 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	swap_b(void)
 	write(1, "sb\n", 3);
 }
 
-void	ft_ss(void)
+void	ss(void)
 {
 	swap(stack()->stk_a, 0, 'a');
 	swap(stack()->stk_b, stack()->last_b, 'b');
