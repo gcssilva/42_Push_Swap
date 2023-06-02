@@ -6,7 +6,7 @@
 /*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:15:06 by gsilva            #+#    #+#             */
-/*   Updated: 2023/06/01 18:05:45 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/06/02 08:26:53 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	base_sort(void)
 		&& stack()->stk_a->nbr > stack()->last_a->nbr)
 	{
 		if (stack()->b_size > 1 && stack()->stk_b->next->nbr
-			< stack()->stk_b->nbr)
+			> stack()->stk_b->nbr)
 			rr();
 		else
 			rotate_a();
