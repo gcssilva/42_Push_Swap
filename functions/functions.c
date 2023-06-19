@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:15:06 by gsilva            #+#    #+#             */
-/*   Updated: 2023/06/19 13:17:07 by codespace        ###   ########.fr       */
+/*   Updated: 2023/06/19 17:05:01 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	push_swap(void)
 {
-	
+	if (stack()->a_size > 10)
+		ft_sort((stack()->a_size / 5), stack()->a_size % 5);
 }
 
 int	check_input(char **argv)
@@ -70,4 +71,37 @@ void	ft_clean(void)
 		free(node);
 		node = next_node;
 	}
+}
+
+void	ft_sort(int a, int b)
+{
+	int	c;
+
+	c = 5;
+	while (c-- < 0)
+	{
+		if (c > 1)
+			find_limits(a);
+		else
+			find_limits(a + b)
+		while (stack()->stk_a->nbr <= stack()->first && )
+	}
+}
+
+void	find_limits(int x)
+{
+	static int	c = 1;
+	t_node		*temp;
+	
+	i = 1;
+	temp = stack()->stk_c;
+	while (i++ < c)
+		temp = temp->next;
+	stack()->first = temp->nbr;
+	c += x;
+	i = 1;
+	temp = stack()->stk_c;
+	while (i++ < c)
+		temp = temp->next;
+	stack()->last = temp->nbr;
 }

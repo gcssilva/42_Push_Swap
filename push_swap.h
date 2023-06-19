@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:55:57 by gsilva            #+#    #+#             */
-/*   Updated: 2023/06/19 13:16:31 by codespace        ###   ########.fr       */
+/*   Updated: 2023/06/19 16:53:44 by gsilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_node
 
 typedef struct s_stack
 {
+	int			first;
+	int			last;
 	int			a_size;
 	int			b_size;
 	t_node		*stk_a;
@@ -51,6 +53,8 @@ void		push_b(void);
 void		nbr_overflow(void);
 void		ft_clean(void);
 void		create_sorted(void);
+void		push_swap(void);
+void		ft_sort(int a, int b);
 int			ft_strcmp(char *s1, char *s2);
 int			ft_atoi(const char *str);
 int			check_input(char **argv);
