@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:31:37 by gsilva            #+#    #+#             */
-/*   Updated: 2023/06/01 18:03:01 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/06/19 13:08:08 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	main(int argc, char **argv)
 		add_back(new_node(ft_atoi(argv[i])));
 	stack()->a_size = i - 1;
 	stack()->b_size = 0;
-	push_swap();
+	create_sorted();
+	print_stks();
 	ft_clean();
 	return (0);
 }

@@ -3,111 +3,71 @@
 /*                                                        :::      ::::::::   */
 /*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:15:06 by gsilva            #+#    #+#             */
-/*   Updated: 2023/06/02 08:26:53 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/06/19 13:17:07 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*stack(void)
-{
-	static t_stack	_stk;
-
-	return (&_stk);
-}
-
-t_node	*new_node(int nbr)
-{
-	t_node	*new_node;
-
-	new_node = (t_node *)malloc(sizeof(t_node));
-	if (!new_node)
-		return (NULL);
-	new_node->nbr = nbr;
-	new_node->next = NULL;
-	return (new_node);
-}
-
-void	add_back(t_node *new)
-{
-	if (!stack()->stk_a)
-	{
-		stack()->stk_a = new;
-		stack()->last_a = new;
-		return ;
-	}
-	stack()->last_a->next = new;
-	stack()->last_a = new;
-}
-
-void	reduce_a(void)
-{
-	while (stack()->a_size > 3)
-	{
-		if (stack()->stk_a->next->nbr < stack()->stk_a->nbr
-			&& stack()->stk_a->next->nbr < stack()->last_a->nbr)
-		{
-			if (stack()->b_size > 1 && stack()->stk_b->nbr < stack()->stk_b->next->nbr)
-				ss();
-			else
-				swap_a();
-			
-		}
-		else if (stack()->last_a->nbr < stack()->stk_a->nbr
-			&& stack()->last_a->nbr < stack()->stk_a->next->nbr)
-		{
-			if (stack()->b_size > 1 && stack()->stk_b->nbr < stack()->last_b->nbr)
-				rrr();
-			else
-				rrotate_a();
-		}
-		push_b();
-		print_stks();
-	}
-}
-
-void	base_sort(void)
-{
-	if (stack()->stk_a->nbr > stack()->stk_a->next->nbr
-		&& stack()->stk_a->nbr > stack()->last_a->nbr)
-	{
-		if (stack()->b_size > 1 && stack()->stk_b->next->nbr
-			> stack()->stk_b->nbr)
-			rr();
-		else
-			rotate_a();
-	}
-	else if (stack()->stk_a->next->nbr > stack()->last_a->nbr
-		&& stack()->stk_a->next->nbr > stack()->stk_a->nbr)
-	{
-		if (stack()->b_size > 1 && stack()->last_b->nbr > stack()->stk_b->nbr
-			&& stack()->last_b->nbr > stack()->stk_b->next->nbr)
-			rrr();
-		else
-			rrotate_a();
-	}
-	if (stack()->stk_a->nbr > stack()->stk_a->next->nbr)
-	{
-		if (stack()->b_size > 1 && stack()->stk_b->next->nbr > stack()->stk_b->nbr
-			&& stack()->stk_b->next->nbr > stack()->last_b->nbr)
-			ss();
-		else
-			swap_a();
-	}
-}
-
 void	push_swap(void)
 {
-	reduce_a();
-	if (stack()->a_size == 3)
-		base_sort();
-	else
+	
+}
+
+int	check_input(char **argv)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	while (argv[++i])
 	{
-		if (stack()->stk_a->nbr > stack()->stk_a->next->nbr)
-			swap_a();
+		j = i;
+		while (argv[++j])
+		{
+			if (ft_strcmp(argv[i], argv[j]))
+				return (0);
+		}
+		k = -1;
+		while (argv[i][++k])
+		{
+			if (k == 0 && argv[i][k] == '-')
+				k++;
+			if (!ft_isdigit(argv[i][k]))
+				return (0);
+		}
 	}
-	print_stks();
+	return (1);
+}
+
+void	ft_clean(void)
+{
+	t_node	*node;
+	t_node	*next_node;
+
+	node = stack()->stk_a;
+	while (node)
+	{
+		next_node = node->next;
+		free(node);
+		node = next_node;
+	}
+	node = stack()->stk_b;
+	while (node)
+	{
+		next_node = node->next;
+		free(node);
+		node = next_node;
+	}
+	node = stack()->stk_c;
+	while (node)
+	{
+		next_node = node->next;
+		free(node);
+		node = next_node;
+	}
 }

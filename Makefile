@@ -2,6 +2,7 @@ NAME	=	push_swap
 FLAGS	=	-Wall -Werror -Wextra
 CC		=	cc
 SRC		=	push_swap.c	\
+			functions/stacks.c	\
 			functions/push.c	\
 			functions/rotate.c	\
 			functions/rrotate.c	\

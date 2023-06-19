@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extra_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilva <gsilva@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:16:12 by gsilva            #+#    #+#             */
-/*   Updated: 2023/06/01 16:27:15 by gsilva           ###   ########.fr       */
+/*   Updated: 2023/06/19 13:16:16 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ void	print_stks(void)
 {
 	t_node	*stk_a;
 	t_node	*stk_b;
+	t_node	*stk_c;
 
 	stk_a = stack()->stk_a;
 	stk_b = stack()->stk_b;
-	printf("a\t\tb\n");
-	while (stk_a || stk_b)
+	stk_c = stack()->stk_c;
+	printf("a\t\tb\t\tc\n");
+	while (stk_a || stk_b || stk_c)
 	{
 		if (stk_a)
 		{
@@ -59,35 +61,15 @@ void	print_stks(void)
 			stk_b = stk_b->next;
 		}
 		else
+			printf("n\t\t");
+		if (stk_c)
+		{
+			printf("%d\n", stk_c->nbr);
+			stk_c = stk_c->next;
+		}
+		else
 			printf("n\n");
 	}
-}
-
-int	check_input(char **argv)
-{
-	int	i;
-	int	j;
-	int	k;
-
-	i = 0;
-	while (argv[++i])
-	{
-		j = i;
-		while (argv[++j])
-		{
-			if (ft_strcmp(argv[i], argv[j]))
-				return (0);
-		}
-		k = -1;
-		while (argv[i][++k])
-		{
-			if (k == 0 && argv[i][k] == '-')
-				k++;
-			if (!ft_isdigit(argv[i][k]))
-				return (0);
-		}
-	}
-	return (1);
 }
 
 int	ft_strcmp(char *s1, char *s2)
@@ -116,23 +98,15 @@ void	nbr_overflow(void)
 	exit(0);
 }
 
-void	ft_clean(void)
+int	is_sorted(void)
 {
-	t_node	*node;
-	t_node	*next_node;
+	t_node	*temp;
 
-	node = stack()->stk_a;
-	while (node)
+	temp = stack()->stk_a;
+	while (temp->next)
 	{
-		next_node = node->next;
-		free(node);
-		node = next_node;
+		if (temp->nbr > temp->next->nbr)
+			return (0);
 	}
-	node = stack()->stk_b;
-	while (node)
-	{
-		next_node = node->next;
-		free(node);
-		node = next_node;
-	}
+	return (1);
 }
